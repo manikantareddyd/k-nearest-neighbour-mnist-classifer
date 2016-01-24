@@ -9,3 +9,6 @@ Accuracy	N_Neighbours	Weights		Metric
 0.9640		3				Distance	Manhattan (minkowski p=1)
 0.9705		3				Uniform		Eucledian (minkowski p=2)
 0.9633		3				Uniform		Manhattan (minkowski p=1)
+0.9700		7				Distance	Eucledian (minkowski p=2)
+0.9623		7				Distance 	Manhattan (minkowski p=1)
+0.9614		7				Uniform		Manhattan (minkowski p=1)

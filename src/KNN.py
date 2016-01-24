@@ -17,13 +17,13 @@ for i in range(0,10000):
 	test_labels.append(test_raw[1][i])
 	test_data.append(test_raw[0][i])
 
-print "Holololol 3n Uniform p=1"
+print "Holololol 7n Uniform p=1"
 del train_raw
 del mn
 del test_raw
 
 nbrsModel = KNeighborsClassifier(\
-	n_neighbors=3,\
+	n_neighbors=7,\
 	weights = 'uniform',\
 	algorithm = 'auto',\
 	metric = 'minkowski',\
