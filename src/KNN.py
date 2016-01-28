@@ -1,6 +1,7 @@
 from mnist import MNIST
 import numpy as np
 from sklearn.neighbors import  KNeighborsClassifier
+import sys
 
 mn  = MNIST('./data')
 train_raw = mn.load_training()
@@ -17,19 +18,23 @@ for i in range(0,10000):
 	test_labels.append(test_raw[1][i])
 	test_data.append(test_raw[0][i])
 
-print "Holololol 7n Uniform p=1"
+
 del train_raw
 del mn
 del test_raw
+if int(sys.argv[2])==1:
+	Weights='uniform'
+else:
+	Weights='distance'
 
 nbrsModel = KNeighborsClassifier(\
-	n_neighbors=7,\
-	weights = 'uniform',\
+	n_neighbors=int(sys.argv[1]),\
+	weights = Weights,\
 	algorithm = 'auto',\
 	metric = 'minkowski',\
-	p=1,\
+	p=sys.argv[3],\
 	n_jobs = -1)
-print "POP"
+
 nbrsModel.fit(train_data,train_labels)
-print "POOP"
-print(nbrsModel.score(test_data,test_labels))
+
+print nbrsModel.score(test_data,test_labels), int(sys.argv[1]), Weights, sys.argv[3]
