@@ -32,7 +32,7 @@ nbrsModel = KNeighborsClassifier(\
 	weights = Weights,\
 	algorithm = 'auto',\
 	metric = 'minkowski',\
-	p=sys.argv[3],\
+	p=int(sys.argv[3]),\
 	n_jobs = -1)
 
 nbrsModel.fit(train_data,train_labels)
